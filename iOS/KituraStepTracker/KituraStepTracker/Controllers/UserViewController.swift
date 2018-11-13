@@ -200,8 +200,8 @@ class UserViewController: UIViewController {
     }
 
     private func initImageView(){
-        //会員番号を基にQRコードを作成 TODO:会員番号取得のロジックは適宜書き換えて下さい(動的想定でvar定義)
-        var memberid = "HRQ01-34345-9FH0J1-11111"
+        //会員番号を取得
+        let memberid = getMemberId()
         
         // NSString から NSDataへ変換
         let data = memberid.data(using: String.Encoding.utf8)!
@@ -230,6 +230,14 @@ class UserViewController: UIViewController {
         // UIImageViewのインスタンスをビューに追加
         self.view.addSubview(imageView)
         
+    }
+    
+    private func getMemberId() -> String {
+        // 会員番号を生成するロジックを適宜実装して下さい。
+        // ここではリテラルで返します。
+        let memberid = "HRQ01-34345-9FH0J1-11111"
+        
+        return memberid
     }
 }
 
